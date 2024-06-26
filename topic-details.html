@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic Details</title>
+  <link rel="stylesheet" href="styles/topic-details.css">
+</head>
+
+<body>
+  <h2>Topic Details</h2>
+  <div class="topic-details-container">
+    <!-- The content of this div will be filled based on the query parameter -->
+  </div>
+
+  <script>
+    // This script will load the topic details based on the query parameter
+    const params = new URLSearchParams(window.location.search);
+    const topic = params.get('topic');
+    const topicDetailsContainer = document.querySelector('.topic-details-container');
+
+    const topics = {
+      'pre-programming-basics': `
+                <p>1. Computer and digital basics</p>
+                <p>2. Computer hardware</p>
+                <p>3. Computer software</p>
+                <p>4. Numbering systems</p>
+                <p>5. Operating systems and files management</p>
+                <p>6. Computer network</p>
+                <p>7. Computer programming</p>
+                <p>8. VS Code tutorial and CMD basics git & github</p>
+            `,
+      'cpp-basics': `
+                <p>01. Introduction to C++ and how C++ works</p>
+                <p>02. Syntax, comments, and outputs</p>
+                <p>03. Variables, data types, operators, and inputs</p>
+                <p>04. Control statements (conditions and loops)</p>
+                <p>05. Functions and functional programming</p>
+                <p>06. Arrays and vectors</p>
+                <p>07. Pointers</p>
+                <p>08. Structure, enumeration, and structural programming</p>
+                <p>09. Name spaces, header files, and debugging</p>
+                <p>10. Exception handling and file handling</p>
+                <p>11. Concurrency programming</p>
+                <p>12. Regex</p>
+            `,
+      'oop': `
+                <p>1. Intro to opp and classes and objects</p>
+                <p>2. Encapsulation</p>
+                <p>3. Inheritance</p>
+                <p>4. Polymorphism</p>
+                <p>5. Abstraction</p>
+                <p>6. Classes relationships</p>
+            `,
+      'DS': `
+            <p>01. Intro To data structure</p>
+            <p>02. Complexity Analysis</p>
+            <p>03. Memory management</p>
+            <p>04. Array</p>
+            <p>05. Linked list => singly, doubly, circular</p>
+            <p>06. Stack</p>
+            <p>07. Queue => linear, circular queue, priority queue, doubly end queue</p>
+            <p>08. Tree => binary, Binary search, AVL, segment</p>
+            <p>09. Hash table </p>
+            <p>10. graph </p>
+            <p>11. Heap </p>
+        `,
+        'Algo': `
+        <p>01. Intro To Algorithms</p>
+        <p>02. Complexity Analysis</p>
+        <p>03. Divide & conquer</p>
+        <p>04. Dynamic programming</p>
+        <p>05. Greedy algorithms</p>
+        <p>06. Backtracking & recursion</p>
+        <p>07. Branch & bound</p>
+        <p>08. Graph Algorithms</p>
+        <p>09. Sorting Algorithms</p>
+        <p>10. Searching Algorithms</p>
+        <p>11. String Algorithms</p>
+    `,
+    'ood': `
+    <p>1. Intro to OOD</p>
+    <p>2. Solid principles</p>
+    <p>3. DRY & KISS & YAGNI</p>
+    <p>4. Design patterns => creational , structural , behavioral</p>
+    <p>5. UML</p>
+`,
+      // Add more topics as needed
+    };
+
+    topicDetailsContainer.innerHTML = topics[topic] || '<p>Topic details not found.</p>';
+  </script>
+</body>
+
+</html>
